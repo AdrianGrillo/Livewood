@@ -1,12 +1,19 @@
+/* Default-box with no scroll bars in either direction and an off-white 
+background. */
+
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 	background-color: rgb(226, 226, 226);
+	overflow: hidden;
 }
 
 /*<-----Navigation ----->*/
+
+/* Takes up 100% of horizontal space even when resizing the window. All items 
+inside are aligned in the center of the navbar vertically. */
 
 header {
 	background-color: grey;
@@ -21,13 +28,20 @@ header {
 	opacity: .8;
 }
 
+/* Each container in my navbar will take up an equal amount of space. These three
+containers are spaced evenly apart from both each other and the sides of the 
+page. */
+
 .logo-container, .nav-links, .cart {
 	display: flex;
 	flex: 1;
 	justify-content: space-around;
 }
 
+/* Will transiion to the :hover property over the course of 0.3s. */
+
 .logo-container a {
+	color: black;
 	text-decoration: none;
 	transition: 0.3s;
 
@@ -36,6 +50,9 @@ header {
 .logo-container a:hover {
 	color: rgb(226, 226, 226);
 }
+
+/* all of our nav-links wil take up an equal amount of room within their 
+container. */ 
 
 nav {
 	flex: 1;
@@ -46,6 +63,7 @@ nav {
 }
 
 .nav-link {
+	color: black;
 	text-decoration: none;
 	transition: 0.3s;
 }
@@ -54,13 +72,16 @@ nav {
 	color: rgb(226, 226, 226);
 }
 
+/* Centers "CART" horizontally within its conatiner. */
+
 .cart {
 	justify-content: center;
 }
 
 .cart a {
-	transition: 0.3s;
+	color: black;
 	text-decoration: none;
+	transition: 0.3s;
 }
 
 .cart a:hover {
@@ -69,13 +90,23 @@ nav {
 
 /* <----- Main Content -----> */
 
+/* Positioned absoluetly in relation to the document body with no space between 
+the top of the image and the top of the page.  */
+
 main .background {
 	position: absolute;
 	top: 0;
 	z-index: -1;
-	display: inline;
+}
+
+/* Takes up 100% of horizontal space even when resizing the window. */
+
+.background img {
 	max-width: 100%;
 }
+
+/* Positioned absoluetly in relation to the document body so that it can be placed
+specifically under the light in the image. */
 
 .cta {
 	position: absolute;
@@ -83,8 +114,9 @@ main .background {
 	left: 600px;
 	color: black;
 	letter-spacing: 2px;
-	transition: 0.3s;
 }
+
+/* This button is positioned relative to it's container. */
 
 .browse-btn {
 	position: relative;
@@ -93,13 +125,14 @@ main .background {
 	height: 50px;
 	width: 150px;
 	font-size: 20px; 
-	color: black;
 	background: grey;
+	color: black;
 	border: 2px solid black;
 	border-radius: 10px;
+	transition: 0.3s;
 }
 
 .browse-btn:hover {
 	color: rgb(226, 226, 226);
-	letter-spacing: 3px;
+	letter-spacing: 1.5px;
 }
